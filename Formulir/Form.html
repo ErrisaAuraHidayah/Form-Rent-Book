@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+</head>
+<body>
+    <h2>Form Create KTP</h2>
+    <form action="" id="form1" name="form1">
+        
+        <label>Nama</label>
+        <input type="text" id="nama" >
+        
+        <label>NIK</label>
+        <input type="number" id="nik" >
+        
+        <label>Alamat</label>
+        <input type="text" id="alamat" >
+        
+        <button type="button" onclick="proses()">Create</button>
+    </form>
+    <script>
+        function proses(){
+            //ini untuk memilih mau memproses data atau tidak
+            const pilih = confirm("proses data");
+            if(pilih === true){
+                const name = document.getElementById("nama").value;
+                const no = document.getElementById("nik").value;
+                const alamatnya = document.getElementById("alamat").value;
+
+                const searchParams = new URLSearchParams({
+                    nama : name,
+                    nik : no,
+                    alamat : alamatnya,
+                });
+                window.location.href="detail.html?" + searchParams.toString();          
+            }else{
+                alert("Oke");
+
+            }
+        }
+    </script>
+    
+</body>
+</html>

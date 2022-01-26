@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+</head>
+<body>
+    <h2>Form Peminjaman Buku</h2>
+    <hr>
+    <form action="" id="form1" name="form1">
+
+        <label>Nama Siswa :  </label>
+        <input type="text" id="nama" >
+        
+        <label>Judul Buku</label>
+        <input type="text" id="judul" >
+        
+        <label>Kode Buku </label>
+        <input type="number" id="id" >
+        
+        <label>Tanggal Pinjam </label>
+        <input type="date" id="pinjam">
+        
+        <button type="button" onclick="proses()">Pinjam</button>
+    </form>
+    <script>
+        function proses(){
+            //ini untuk memilih mau memproses data atau tidak
+            const pilih = confirm("proses data");
+            if(pilih === true){
+                const name = document.getElementById("nama").value;
+                const title = document.getElementById("judul").value;
+                const number = document.getElementById("id").value;
+                const  tanggal = document.getElementById("pinjam").value;
+
+                const searchParams = new URLSearchParams({
+                    nama : name,
+                    judul : title,
+                    id : number,
+                    pinjam : tanggal,
+                });
+                window.location.href="detail.html?" + searchParams.toString();          
+            }else{
+                alert("Oke");
+
+            }
+        }
+    </script>
+    
+</body>
+</html>

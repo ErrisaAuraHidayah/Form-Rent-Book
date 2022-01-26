@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Detail</title>
+</head>
+<body>
+    <p> Nama Siswa : <span id="tempatnama" ></span></p>
+    <p> Judul Buku : <span id="tempatjudul" ></span></p>
+    <p> Kode Buku : <span id="tempatkode" ></span></p>
+    <p> Tanggal Pinjam : <span id="tempattanggal" ></span></p>
+    
+    <script>
+        const searchParams = new URL(document.URL).searchParams;
+        const name = searchParams.get("nama");
+        const title = searchParams.get("judul");
+        const number = searchParams.get("id");
+        const tanggal = searchParams.get("pinjam");
+
+        document.getElementById("tempatnama").innerHTML = name;
+        document.getElementById("tempatjudul").innerHTML = title;
+        document.getElementById("tempatkode").innerHTML = number;
+        document.getElementById("tempattanggal").innerHTML = tanggal;
+
+        
+
+
+    </script>
+    
+</body>
+</html>
